@@ -1,0 +1,17 @@
+from time import sleep
+print('\033[35m-=' * 20)
+print('\033[35mVALIDAÇÃO DE EMPRÉSTIMO BANCÁRIO')
+print('\033[35m-=' * 20)
+print('\033[1;36mA prestação mensal não pode exceder 30% do salário ou então o empréstimo será NEGADO\033[m.')
+casa = float(input('\033[37mDigite o valor da casa R$'))
+salario = float(input('Digite o salário do comprador R$'))
+anos = int(input('Quantos anos de financiamento? '))
+porcentagem = salario * 30 / 100
+prestacao = casa / (anos * 12)
+print(f'\033[30mPara pagar uma casa de R${casa:.0f} em {anos} anos a prestação será de R${prestacao:.2f}')
+print('\033[97mPROCESSANDO...')
+sleep(2)
+if prestacao <= porcentagem:
+    print('\033[32mEmpréstimo pode ser CONCEDIDO!')
+else:
+    print('\033[31mEmpréstimo NEGADO!')
